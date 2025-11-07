@@ -8,6 +8,7 @@ public class PlayerInteractor : MonoBehaviour
     public int points;
     public int winpoints;
     public TMP_Text pointsText;
+    
 
     [Header("Sound References")]
     public PlayerController playerCont;

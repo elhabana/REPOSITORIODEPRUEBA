@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -22,11 +23,14 @@ public class PlayerController : MonoBehaviour
     public Transform respawnPoint;
     public float falllimit = -10;
 
+    public int lives;
+    public TMP_Text livesText;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        lives = 3;
     }
 
     // Update is called once per frame
@@ -37,6 +41,8 @@ public class PlayerController : MonoBehaviour
         {
             Respawn();
         }
+
+        livesText.text = "Lives: " + lives.ToString();
     }
 
     private void FixedUpdate()
@@ -54,6 +60,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Obstacle"))
         {
             Respawn();
+            lives = lives - 1;
         }
     }
 
