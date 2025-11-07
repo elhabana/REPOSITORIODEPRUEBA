@@ -52,19 +52,16 @@ public class PlayerController : MonoBehaviour
 
         if (lives == 2)
         {
-            Debug.Log("Te quedan 2 vidas.");
             LivesImage.SetActive(false);
         }
 
         if (lives == 1)
         {
-            Debug.Log("Te queda 1 vida.");
             LivesImage_1.SetActive(false);
         }
 
         if (lives == 0)
         {
-            SceneManager.LoadScene(0);
             LivesImage_2.SetActive(false);
         }
 
