@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -42,6 +43,11 @@ public class PlayerController : MonoBehaviour
             Respawn();
         }
 
+        if (lives == 0)
+        {
+            SceneManager.LoadScene(0);
+        }
+
         livesText.text = "Lives: " + lives.ToString();
     }
 
@@ -60,7 +66,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Obstacle"))
         {
             Respawn();
-            lives = lives - 1;
+            -- lives;
         }
     }
 
