@@ -36,6 +36,9 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         lives = 3;
+        LivesImage.SetActive(true);
+        LivesImage_1.SetActive(true);
+        LivesImage_2.SetActive(true);
     }
 
     // Update is called once per frame
