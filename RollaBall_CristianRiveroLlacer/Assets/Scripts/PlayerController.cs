@@ -26,7 +26,6 @@ public class PlayerController : MonoBehaviour
     public float falllimit = -10;
 
     public int lives;
-    public TMP_Text livesText;
     public GameObject LivesImage;
     public GameObject LivesImage_1;
     public GameObject LivesImage_2;
@@ -62,10 +61,9 @@ public class PlayerController : MonoBehaviour
 
         if (lives == 0)
         {
+            SceneManager.LoadScene(0);
             LivesImage_2.SetActive(false);
         }
-
-        livesText.text = "Lives: " + lives.ToString();
     }
 
     private void FixedUpdate()
