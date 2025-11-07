@@ -18,8 +18,6 @@ public class PlayerInteractor : MonoBehaviour
     void Start()
     {
         points = 0;
-
-        
     }
 
     // Update is called once per frame

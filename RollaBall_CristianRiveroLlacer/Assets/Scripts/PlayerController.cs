@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering.UI;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
@@ -26,6 +27,9 @@ public class PlayerController : MonoBehaviour
 
     public int lives;
     public TMP_Text livesText;
+    public GameObject LivesImage;
+    public GameObject LivesImage_1;
+    public GameObject LivesImage_2;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -43,9 +47,22 @@ public class PlayerController : MonoBehaviour
             Respawn();
         }
 
+        if (lives == 2)
+        {
+            Debug.Log("Te quedan 2 vidas.");
+            LivesImage.SetActive(false);
+        }
+
+        if (lives == 1)
+        {
+            Debug.Log("Te queda 1 vida.");
+            LivesImage_1.SetActive(false);
+        }
+
         if (lives == 0)
         {
             SceneManager.LoadScene(0);
+            LivesImage_2.SetActive(false);
         }
 
         livesText.text = "Lives: " + lives.ToString();
@@ -110,9 +127,6 @@ public class PlayerController : MonoBehaviour
         { 
             isGrounded= false;
             Jump();
-
         }
-
     }
-
 }

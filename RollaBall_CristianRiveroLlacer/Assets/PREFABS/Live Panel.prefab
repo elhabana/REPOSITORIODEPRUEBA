@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6280187503896750428}
   - component: {fileID: 2507402238848190734}
   m_Layer: 5
-  m_Name: Lives Image
+  m_Name: LivesImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 4073366420812655222}
   - component: {fileID: 2084614496196769749}
   m_Layer: 5
-  m_Name: Lives Image (2)
+  m_Name: LivesImage_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 8895801681201731010}
   - component: {fileID: 685004708876400687}
   m_Layer: 5
-  m_Name: Lives Image (1)
+  m_Name: LivesImage_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
