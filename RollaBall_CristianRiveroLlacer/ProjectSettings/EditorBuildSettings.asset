@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu_SCNs/SCN_Loser.unity
     guid: dc1139742cecb16428237bd14817708d
+  - enabled: 1
+    path: Assets/Scenes/Custom_SCNs/CUSTOM BALL.unity
+    guid: 1aca800c86e2f90459a9b7a95054a06e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 08d8b4b2b683ed542b7e002f4af1cd32, type: 3}
   m_UseUCBPForAssetBundles: 0
