@@ -9,7 +9,6 @@ public class PlayerInteractor : MonoBehaviour
     public int points;
     public int winpoints;
     public TMP_Text pointsText;
-    public GameObject PlusOne;
    
 
     [Header("Sound References")]
@@ -20,7 +19,6 @@ public class PlayerInteractor : MonoBehaviour
     void Start()
     {
         points = 0;
-        PlusOne.SetActive(false);
     }
 
     // Update is called once per frame
@@ -43,7 +41,6 @@ public class PlayerInteractor : MonoBehaviour
             // Esta Opcion Consume mas RAM,
             // Destroy(other.gameObject);
             other.gameObject.SetActive(false);
-            PlusOne.SetActive(true);
             playerCont.PlaySFX(1);
         }
 
