@@ -2254,7 +2254,7 @@ PrefabInstance:
     - target: {fileID: 3842050110977511061, guid: aaacce94fafc0534a8f0b6635b7df89d, type: 3}
       propertyPath: plusOne
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3723744504338901699, guid: 99bb4162883e98e4486e6ecf6065ed3c, type: 3}
     - target: {fileID: 3842050110977511061, guid: aaacce94fafc0534a8f0b6635b7df89d, type: 3}
       propertyPath: winpoints
       value: 6
@@ -2323,6 +2323,10 @@ PrefabInstance:
     - target: {fileID: 3723744504338901699, guid: 99bb4162883e98e4486e6ecf6065ed3c, type: 3}
       propertyPath: m_Name
       value: PlusOne
+      objectReference: {fileID: 0}
+    - target: {fileID: 3723744504338901699, guid: 99bb4162883e98e4486e6ecf6065ed3c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4601828331092695205, guid: 99bb4162883e98e4486e6ecf6065ed3c, type: 3}
       propertyPath: m_LocalPosition.x

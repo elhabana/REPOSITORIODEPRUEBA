@@ -84,8 +84,6 @@ public class PlayerController : MonoBehaviour
             Respawn();
             -- lives;
         }
-
-        
     }
 
     void Respawn()
@@ -124,9 +122,9 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (isGrounded==true && context.performed)
+        if (isGrounded == true && context.performed)
         { 
-            isGrounded= false;
+            isGrounded = false;
             Jump();
         }
     }

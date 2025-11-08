@@ -2,13 +2,14 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class PlayerInteractor : MonoBehaviour
 {
     public int points;
     public int winpoints;
     public TMP_Text pointsText;
-    
+    public GameObject plusOne;
 
     [Header("Sound References")]
     public PlayerController playerCont;
@@ -18,6 +19,11 @@ public class PlayerInteractor : MonoBehaviour
     void Start()
     {
         points = 0;
+        GameObject[] objetos = bool GameObject.CompareTag(string, "PlusOne");
+        foreach (GameObject obj in objetos)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -42,6 +48,12 @@ public class PlayerInteractor : MonoBehaviour
 
             other.gameObject.SetActive(false);
             playerCont.PlaySFX(1);
+
+        }
+
+        if (other.gameObject.CompareTag("PlusOne"))
+        {
+            other.gameObject.SetActive(true);
         }
     }
 }
