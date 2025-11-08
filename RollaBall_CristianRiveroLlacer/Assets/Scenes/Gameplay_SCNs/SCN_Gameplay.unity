@@ -694,10 +694,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 430706034}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.016192414, y: 0.8061482}
-  m_AnchorMax: {x: 0.2498076, y: 0.85400003}
-  m_AnchoredPosition: {x: -186.11694, y: 1.5}
-  m_SizeDelta: {x: -380, y: -3}
+  m_AnchorMin: {x: 0.013170151, y: 0.8435555}
+  m_AnchorMax: {x: 0.20300001, y: 0.8897408}
+  m_AnchoredPosition: {x: -128.2, y: -1}
+  m_SizeDelta: {x: -269.11694, y: -2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &892589274
 MonoBehaviour:
@@ -730,13 +730,13 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
+  m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 0.68235296}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 0.34117648}
+    bottomRight: {r: 1, g: 1, b: 1, a: 0}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -746,8 +746,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -784,7 +784,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -6.432686, y: 0, z: -376.3127, w: 0}
+  m_margin: {x: -6.432686, y: 0, z: -262.43207, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
