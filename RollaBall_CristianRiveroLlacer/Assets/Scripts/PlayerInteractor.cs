@@ -7,9 +7,9 @@ using UnityEngine.UIElements;
 public class PlayerInteractor : MonoBehaviour
 {
     public int points;
-    public int winpointsfinal;
-    public int winpointslv1;
-    public int winpointslv2;
+    private int winpointsfinal = 100;
+    private int winpointslv1 = 6;
+    private int winpointslv2 = 12;
     public TMP_Text pointsText;
    
 
