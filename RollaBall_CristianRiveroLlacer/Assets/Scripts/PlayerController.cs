@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
 
         if (lives == 0)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(3);
             LivesImage_2.SetActive(false);
         }
     }
