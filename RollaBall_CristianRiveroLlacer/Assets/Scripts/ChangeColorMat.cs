@@ -8,7 +8,7 @@ public class ChangeColorMat : MonoBehaviour
 
     private void Start()
     {
-        material.color = Color.red;
+        
     }
 
     public void Red()

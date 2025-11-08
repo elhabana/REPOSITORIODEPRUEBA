@@ -7,9 +7,10 @@ using UnityEngine.UIElements;
 public class PlayerInteractor : MonoBehaviour
 {
     public int points;
-    public int winpoints;
+    public int winpointsfinal;
+    public int winpointslv1;
+    public int winpointslv2;
     public TMP_Text pointsText;
-    public GameObject PlusOne;
    
 
     [Header("Sound References")]
@@ -20,15 +21,24 @@ public class PlayerInteractor : MonoBehaviour
     void Start()
     {
         points = 0;
-        PlusOne.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (points >= winpoints) 
+        if (points >= winpointsfinal) 
         {
             SceneManager.LoadScene(2);
+        }
+
+        else if (points >= winpointslv1)
+        {
+            SceneManager.LoadScene(5);
+        }
+
+        else if (points >= winpointslv2)
+        {
+            SceneManager.LoadScene(0);
         }
 
         pointsText.text = "Points: " + points.ToString();
@@ -43,7 +53,6 @@ public class PlayerInteractor : MonoBehaviour
             // Esta Opcion Consume mas RAM,
             // Destroy(other.gameObject);
             other.gameObject.SetActive(false);
-            PlusOne.SetActive(true);
             playerCont.PlaySFX(1);
         }
 
