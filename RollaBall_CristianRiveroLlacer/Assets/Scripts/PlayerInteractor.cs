@@ -9,7 +9,8 @@ public class PlayerInteractor : MonoBehaviour
     public int points;
     public int winpoints;
     public TMP_Text pointsText;
-    public GameObject plusOne;
+    public GameObject PlusOne;
+   
 
     [Header("Sound References")]
     public PlayerController playerCont;
@@ -19,11 +20,7 @@ public class PlayerInteractor : MonoBehaviour
     void Start()
     {
         points = 0;
-        GameObject[] objetos = bool GameObject.CompareTag(string, "PlusOne");
-        foreach (GameObject obj in objetos)
-        {
-            gameObject.SetActive(false);
-        }
+        PlusOne.SetActive(false);
     }
 
     // Update is called once per frame
@@ -45,15 +42,10 @@ public class PlayerInteractor : MonoBehaviour
 
             // Esta Opcion Consume mas RAM,
             // Destroy(other.gameObject);
-
             other.gameObject.SetActive(false);
+            PlusOne.SetActive(true);
             playerCont.PlaySFX(1);
-
         }
 
-        if (other.gameObject.CompareTag("PlusOne"))
-        {
-            other.gameObject.SetActive(true);
-        }
     }
 }
