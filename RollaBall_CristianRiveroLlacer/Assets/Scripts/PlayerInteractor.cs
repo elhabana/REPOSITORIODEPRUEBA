@@ -9,15 +9,14 @@ public class PlayerInteractor : MonoBehaviour
     public int points;
     private int winpointsfinal = 100;
     private int winpointslv1 = 6;
-    private int winpointslv2 = 12;
+    private int winpointslv2 = 6;
     public TMP_Text pointsText;
-   
+
 
     [Header("Sound References")]
     public PlayerController playerCont;
 
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         points = 0;

@@ -164,6 +164,10 @@ MonoBehaviour:
   isGrounded: 0
   respawnPoint: {fileID: 0}
   falllimit: -10
+  lives: 0
+  LivesImage: {fileID: 0}
+  LivesImage_1: {fileID: 0}
+  LivesImage_2: {fileID: 0}
 --- !u!114 &976765652732697584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,7 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 0
-  winpoints: 0
+  pointsText: {fileID: 0}
   playerCont: {fileID: -1861580948547408060}
 --- !u!82 &5292390230030057732
 AudioSource:

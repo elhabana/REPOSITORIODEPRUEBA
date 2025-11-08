@@ -31,7 +31,6 @@ public class PlayerController : MonoBehaviour
     public GameObject LivesImage_2;
 
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         lives = 3;
@@ -43,7 +42,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //CinematicMovement();
         if (transform.position.y <= falllimit)
         {
             Respawn();
