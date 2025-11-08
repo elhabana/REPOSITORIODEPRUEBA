@@ -8,6 +8,7 @@ TagManager:
   - Obstacle
   - PickUp
   - PlusOne
+  - Wall
   layers:
   - Default
   - TransparentFX

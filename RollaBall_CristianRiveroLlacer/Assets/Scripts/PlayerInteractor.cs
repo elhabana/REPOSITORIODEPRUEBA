@@ -7,10 +7,12 @@ using UnityEngine.UIElements;
 public class PlayerInteractor : MonoBehaviour
 {
     public int points;
-    private int winpointsfinal = 100;
+    private int winpointsfinal = 18;
     private int winpointslv1 = 6;
-    private int winpointslv2 = 6;
+    private int winpointslv2 = 12;
     public TMP_Text pointsText;
+    public GameObject Wall12;
+    public GameObject Wall13;
 
 
     [Header("Sound References")]
@@ -20,24 +22,26 @@ public class PlayerInteractor : MonoBehaviour
     void Start()
     {
         points = 0;
+        Wall12.gameObject.SetActive(true);
+        Wall13.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (points >= winpointsfinal) 
+        if (points == winpointsfinal)
         {
             SceneManager.LoadScene(2);
         }
 
-        else if (points >= winpointslv1)
+        else if (points == winpointslv1)
         {
-            SceneManager.LoadScene(5);
+            Wall12.gameObject.SetActive(false);
         }
 
-        else if (points >= winpointslv2)
+        else if (points == winpointslv2)
         {
-            SceneManager.LoadScene(0);
+            Wall13.gameObject.SetActive(false);
         }
 
         pointsText.text = "Points: " + points.ToString();
@@ -54,6 +58,5 @@ public class PlayerInteractor : MonoBehaviour
             other.gameObject.SetActive(false);
             playerCont.PlaySFX(1);
         }
-
     }
 }
