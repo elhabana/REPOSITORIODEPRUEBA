@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
         if (transform.position.y <= falllimit)
         {
             Respawn();
+            -- lives;
         }
 
         if (lives == 2)
@@ -83,6 +84,8 @@ public class PlayerController : MonoBehaviour
             Respawn();
             -- lives;
         }
+
+        
     }
 
     void Respawn()
