@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu_SCNs/SCN_Victory.unity
     guid: 77a059a41c894eb47b9ac2a47ad64fbe
+  - enabled: 1
+    path: Assets/Scenes/Menu_SCNs/SCN_Loser.unity
+    guid: dc1139742cecb16428237bd14817708d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 08d8b4b2b683ed542b7e002f4af1cd32, type: 3}
   m_UseUCBPForAssetBundles: 0
