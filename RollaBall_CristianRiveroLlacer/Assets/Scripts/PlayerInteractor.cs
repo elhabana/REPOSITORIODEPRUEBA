@@ -33,7 +33,7 @@ public class PlayerInteractor : MonoBehaviour
 
         else if (points >= winpointslv1)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(5);
         }
 
         else if (points >= winpointslv2)
