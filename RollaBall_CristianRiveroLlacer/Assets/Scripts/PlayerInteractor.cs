@@ -11,8 +11,11 @@ public class PlayerInteractor : MonoBehaviour
     private int winpointslv1 = 6;
     private int winpointslv2 = 12;
     public TMP_Text pointsText;
-    public GameObject Wall12;
-    public GameObject Wall13;
+    public Rigidbody rb1;
+    public Rigidbody rb2;
+    public GameObject mission1;
+    public GameObject mission2;
+    public GameObject mission3;
 
 
     [Header("Sound References")]
@@ -22,8 +25,11 @@ public class PlayerInteractor : MonoBehaviour
     void Start()
     {
         points = 0;
-        Wall12.gameObject.SetActive(true);
-        Wall13.gameObject.SetActive(true);
+        rb1.useGravity = false;
+        rb2.useGravity = false;
+        mission1.gameObject.SetActive(true);
+        mission2.gameObject.SetActive(false);
+        mission3.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -32,16 +38,21 @@ public class PlayerInteractor : MonoBehaviour
         if (points == winpointsfinal)
         {
             SceneManager.LoadScene(2);
+            mission3.gameObject.SetActive(false);
         }
 
         else if (points == winpointslv1)
         {
-            Wall12.gameObject.SetActive(false);
+            rb1.useGravity = true;
+            mission1.gameObject.SetActive(false);
+            mission2.gameObject.SetActive(true);
         }
 
         else if (points == winpointslv2)
         {
-            Wall13.gameObject.SetActive(false);
+            rb2.useGravity = true;
+            mission2.gameObject.SetActive(false);
+            mission3.gameObject.SetActive(true);
         }
 
         pointsText.text = "Points: " + points.ToString();
