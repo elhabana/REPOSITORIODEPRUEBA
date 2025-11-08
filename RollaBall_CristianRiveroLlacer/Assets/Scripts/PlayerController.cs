@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
     {
         transform.position = respawnPoint.transform.position;
         playerRb.linearVelocity = Vector3.zero;
-        PlaySFX(2);
+        PlaySFX(3);
     }
 
     public void PlaySFX(int soundToPlay)
