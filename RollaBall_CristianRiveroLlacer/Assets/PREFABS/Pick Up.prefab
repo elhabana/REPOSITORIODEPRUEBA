@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3323070644268813403}
   - component: {fileID: 8889127444473382651}
   - component: {fileID: 3028262269949760626}
+  - component: {fileID: 8478340344001840349}
   m_Layer: 0
   m_Name: Body
   m_TagString: PickUp
@@ -108,6 +109,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8478340344001840349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374294536892909844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd27b8cb75f45e745ad8265fa5698ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedX: 150
+  speedY: 150
+  speedZ: 150
 --- !u!1 &7562739533055747539
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,7 +133,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2413651221745515500}
-  - component: {fileID: -7586835046543402535}
   m_Layer: 0
   m_Name: Pick Up
   m_TagString: PickUp
@@ -141,18 +156,3 @@ Transform:
   - {fileID: 7809978065039904912}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-7586835046543402535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7562739533055747539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd27b8cb75f45e745ad8265fa5698ba7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedX: 150
-  speedY: 150
-  speedZ: 150

@@ -6,6 +6,10 @@ public class ChangeColorMat : MonoBehaviour
     public Color orange;
     public Color purple;
 
+    private void Start()
+    {
+        material.color = Color.red;
+    }
 
     public void Red()
     {
