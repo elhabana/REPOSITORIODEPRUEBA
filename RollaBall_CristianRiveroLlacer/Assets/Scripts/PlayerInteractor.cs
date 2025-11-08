@@ -16,6 +16,8 @@ public class PlayerInteractor : MonoBehaviour
     public GameObject mission1;
     public GameObject mission2;
     public GameObject mission3;
+    public GameObject tallWall1;
+    public GameObject tallWall2;
 
 
     [Header("Sound References")]
@@ -30,6 +32,8 @@ public class PlayerInteractor : MonoBehaviour
         mission1.gameObject.SetActive(true);
         mission2.gameObject.SetActive(false);
         mission3.gameObject.SetActive(false);
+        tallWall1.gameObject.SetActive(true);
+        tallWall2.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -46,6 +50,7 @@ public class PlayerInteractor : MonoBehaviour
             rb1.useGravity = true;
             mission1.gameObject.SetActive(false);
             mission2.gameObject.SetActive(true);
+            tallWall1.gameObject.SetActive(false);
         }
 
         else if (points == winpointslv2)
@@ -53,6 +58,7 @@ public class PlayerInteractor : MonoBehaviour
             rb2.useGravity = true;
             mission2.gameObject.SetActive(false);
             mission3.gameObject.SetActive(true);
+            tallWall2.gameObject.SetActive(false);
         }
 
         pointsText.text = "Points: " + points.ToString();
