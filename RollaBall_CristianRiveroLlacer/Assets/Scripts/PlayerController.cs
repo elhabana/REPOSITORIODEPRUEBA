@@ -26,39 +26,45 @@ public class PlayerController : MonoBehaviour
 	public float falllimit = -10;
 
 	[Header("Protection")]
-	public bool mushroomProtect=false;
+	public bool mushroomProtect = false;
 
 	public int lives;
 	public GameObject LivesImage;
 	public GameObject LivesImage_1;
 	public GameObject LivesImage_2;
+	public GameObject soundMushroom;
+
+
 	void Start()
 	{
 		lives = 3;
 		LivesImage.SetActive(true);
 		LivesImage_1.SetActive(true);
 		LivesImage_2.SetActive(true);
-	}
+        soundMushroom.SetActive(false);
+    }
 	
 	//Update is called once per frame void Update()
 	void Update()
 	{
 		if(transform.position.y <= falllimit)
-		
 		{
 			//I call Damage to protect
 			Damage();
 			// The player reappear
 			Respawn();
 		}
+
 		if(lives == 2)
 		{
 			LivesImage.SetActive(false);
 		}
+
 		if(lives == 1)
 		{
 			LivesImage_1.SetActive(false);
 		}
+
 		if(lives == 0)
 		{
 			SceneManager.LoadScene(3);
@@ -94,11 +100,13 @@ public class PlayerController : MonoBehaviour
 		{
 			Damage();
 			Respawn();
-		}
+            soundMushroom.SetActive(false);
+        }
 	}
 
 	void Respawn()
-	{ transform.position = respawnPoint.transform.position;
+	{ 
+		transform.position = respawnPoint.transform.position;
 		playerRb.linearVelocity = Vector3.zero;
 		PlaySFX(3);
 	}
@@ -107,12 +115,16 @@ public class PlayerController : MonoBehaviour
 	{
 		if (other.CompareTag("Mushroom"))
 		{
-			mushroomProtect=true; //protect active
+			mushroomProtect = true; //protect active
 			Debug.Log("You have a mushroom protect");
 			Destroy(other.gameObject); // mushroom desappear
-		}
+            soundMushroom.SetActive(true);
+        }
 	}
-	public void PlaySFX(int soundToPlay) { playeraudio.PlayOneShot(soundcollection[soundToPlay]);
+
+	public void PlaySFX(int soundToPlay) 
+	{ 
+		playeraudio.PlayOneShot(soundcollection[soundToPlay]);
 	}
 
 	void PhysicalMovement()
@@ -127,8 +139,7 @@ public class PlayerController : MonoBehaviour
 		PlaySFX(0);
 	}
 
-	public void
-		OnMove(InputAction.CallbackContext context)
+	public void OnMove(InputAction.CallbackContext context)
 	{
 		moveInput=context.ReadValue<Vector2>();
 	}
@@ -139,12 +150,12 @@ public class PlayerController : MonoBehaviour
 		transform.Translate(Vector3.right * speed * moveInput.x * Time.deltaTime);
 	}
 	
-	public void OnJump(InputAction.CallbackContext context)	 {
+	public void OnJump(InputAction.CallbackContext context)
+	{
 		if(isGrounded == true && context.performed)
 		{
 			isGrounded = false; Jump();
 		}
-
 	}
 }
 

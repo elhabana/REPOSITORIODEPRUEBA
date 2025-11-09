@@ -24,6 +24,5 @@ public class ROTATOR : MonoBehaviour
         transform.Rotate(Vector3.up * speedY * Time.deltaTime);
         transform.Rotate(Vector3.right * speedX * Time.deltaTime);
         transform.Rotate(Vector3.forward * speedZ * Time.deltaTime);
-        
     }
 }

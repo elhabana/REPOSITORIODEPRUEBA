@@ -31,8 +31,8 @@ public class Mushroom : MonoBehaviour
         if (other.CompareTag("Player")&& !isCollected)
         {
             Debug.Log("player touch mushroom");
-
             PlayerController player =other.GetComponent<PlayerController>();
+
             if (player != null)
             {
                 player.mushroomProtect = true; //activa la proteccion en el player
