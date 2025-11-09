@@ -9,6 +9,7 @@ TagManager:
   - PickUp
   - PlusOne
   - Wall
+  - Mushroom
   layers:
   - Default
   - TransparentFX
