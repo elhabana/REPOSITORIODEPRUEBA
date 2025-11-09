@@ -544,6 +544,7 @@ GameObject:
   - component: {fileID: 517953073}
   - component: {fileID: 517953072}
   - component: {fileID: 517953075}
+  - component: {fileID: 517953076}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -680,6 +681,21 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: e2a824ea116ddcb42820178fb24f1724, type: 2}
   orange: {r: 1, g: 0.58040833, b: 0, a: 0}
   purple: {r: 0.6300697, g: 0, b: 0.8396226, a: 0}
+--- !u!114 &517953076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517953070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.39215687}
+  m_EffectDistance: {x: 3, y: -3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &868271810
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,6 +813,7 @@ GameObject:
   - component: {fileID: 1006115504}
   - component: {fileID: 1006115503}
   - component: {fileID: 1006115506}
+  - component: {fileID: 1006115507}
   m_Layer: 5
   m_Name: Button (3)
   m_TagString: Untagged
@@ -933,6 +950,21 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: e2a824ea116ddcb42820178fb24f1724, type: 2}
   orange: {r: 1, g: 0.58040833, b: 0, a: 0}
   purple: {r: 0.6300697, g: 0, b: 0.8396226, a: 0}
+--- !u!114 &1006115507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1006115501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.39215687}
+  m_EffectDistance: {x: 3, y: -3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1013551480
 GameObject:
   m_ObjectHideFlags: 0
@@ -946,6 +978,7 @@ GameObject:
   - component: {fileID: 1013551483}
   - component: {fileID: 1013551482}
   - component: {fileID: 1013551485}
+  - component: {fileID: 1013551486}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -1082,6 +1115,21 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: e2a824ea116ddcb42820178fb24f1724, type: 2}
   orange: {r: 1, g: 0.58040833, b: 0, a: 0}
   purple: {r: 0.6300697, g: 0, b: 0.8396226, a: 0}
+--- !u!114 &1013551486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013551480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.39215687}
+  m_EffectDistance: {x: 3, y: -3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1156117842
 GameObject:
   m_ObjectHideFlags: 0
@@ -1770,6 +1818,7 @@ GameObject:
   - component: {fileID: 1596055134}
   - component: {fileID: 1596055133}
   - component: {fileID: 1596055136}
+  - component: {fileID: 1596055137}
   m_Layer: 5
   m_Name: Button (5)
   m_TagString: Untagged
@@ -1906,6 +1955,21 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: e2a824ea116ddcb42820178fb24f1724, type: 2}
   orange: {r: 1, g: 0.58040833, b: 0, a: 0}
   purple: {r: 0.6300697, g: 0, b: 0.8396226, a: 0}
+--- !u!114 &1596055137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596055131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.39215687}
+  m_EffectDistance: {x: 3, y: -3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1701011374
 GameObject:
   m_ObjectHideFlags: 0
@@ -2056,6 +2120,7 @@ GameObject:
   - component: {fileID: 1705242461}
   - component: {fileID: 1705242460}
   - component: {fileID: 1705242463}
+  - component: {fileID: 1705242464}
   m_Layer: 5
   m_Name: Button (4)
   m_TagString: Untagged
@@ -2192,6 +2257,21 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: e2a824ea116ddcb42820178fb24f1724, type: 2}
   orange: {r: 1, g: 0.58040833, b: 0, a: 0}
   purple: {r: 0.6300697, g: 0, b: 0.8396226, a: 0}
+--- !u!114 &1705242464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705242458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.39215687}
+  m_EffectDistance: {x: 3, y: -3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1742278127
 GameObject:
   m_ObjectHideFlags: 0
@@ -2969,6 +3049,7 @@ GameObject:
   - component: {fileID: 2079067179}
   - component: {fileID: 2079067178}
   - component: {fileID: 2079067181}
+  - component: {fileID: 2079067182}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -3105,6 +3186,21 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: e2a824ea116ddcb42820178fb24f1724, type: 2}
   orange: {r: 1, g: 0.58040833, b: 0, a: 0}
   purple: {r: 0.6300697, g: 0, b: 0.8396226, a: 0}
+--- !u!114 &2079067182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079067176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.39215687}
+  m_EffectDistance: {x: 3, y: -3}
+  m_UseGraphicAlpha: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
