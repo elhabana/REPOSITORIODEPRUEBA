@@ -147,16 +147,16 @@ RectTransform:
   m_GameObject: {fileID: 603325}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 0.24280502, y: 0.24280502, z: 0.24280502}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 386924269}
   m_Father: {fileID: 868271814}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.77172714, y: 0.845}
-  m_AnchorMax: {x: 0.8333178, y: 0.9110001}
-  m_AnchoredPosition: {x: 1, y: 0}
-  m_SizeDelta: {x: 639.34204, y: 289.15}
+  m_AnchorMin: {x: 0.8841876, y: 0.9218519}
+  m_AnchorMax: {x: 0.97900003, y: 0.9672223}
+  m_AnchoredPosition: {x: 0.99993896, y: 0}
+  m_SizeDelta: {x: 559.46, y: 154.496}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &603327
 MonoBehaviour:
@@ -421,16 +421,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 386924268}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000001461}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 603326}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.24700001}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -25.171001}
+  m_SizeDelta: {x: -0.00030518, y: -63.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &386924270
 MonoBehaviour:
@@ -517,7 +517,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: -5.244545}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -764,13 +764,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 80
-  m_fontSizeBase: 80
+  m_fontSize: 90
+  m_fontSizeBase: 90
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
