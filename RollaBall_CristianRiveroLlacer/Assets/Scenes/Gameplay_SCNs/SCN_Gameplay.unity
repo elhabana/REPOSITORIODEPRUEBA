@@ -8354,6 +8354,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1210442835}
   - component: {fileID: 1210442834}
+  - component: {fileID: 1210442836}
   m_Layer: 0
   m_Name: LevelMusic
   m_TagString: Untagged
@@ -8473,6 +8474,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1210442836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210442833}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5ba2cdc24261334bbed87e31e290047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelMusic: {fileID: 1210442834}
 --- !u!1 &1274331309
 GameObject:
   m_ObjectHideFlags: 0
@@ -13429,6 +13443,7 @@ MonoBehaviour:
   rotationSpeed: 50
   canRespawn: 0
   respawnTime: 10
+  isCollected: 0
 --- !u!136 &2073819966
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14175,7 +14190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 621945491848631386, guid: d84895fc2408da048ab3dc645c4641dc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.91400146
+      value: 0.9140625
       objectReference: {fileID: 0}
     - target: {fileID: 685004708876400687, guid: d84895fc2408da048ab3dc645c4641dc, type: 3}
       propertyPath: m_Sprite
@@ -14331,7 +14346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2930761169639129955, guid: d84895fc2408da048ab3dc645c4641dc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.14703369
+      value: 0.14709473
       objectReference: {fileID: 0}
     - target: {fileID: 4717490490852389856, guid: d84895fc2408da048ab3dc645c4641dc, type: 3}
       propertyPath: m_TagString
@@ -14480,6 +14495,10 @@ PrefabInstance:
       propertyPath: playerRb
       value: 
       objectReference: {fileID: 938320262}
+    - target: {fileID: -1861580948547408060, guid: aaacce94fafc0534a8f0b6635b7df89d, type: 3}
+      propertyPath: falllimit
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: -1861580948547408060, guid: aaacce94fafc0534a8f0b6635b7df89d, type: 3}
       propertyPath: jumpforce
       value: 5
@@ -14636,6 +14655,10 @@ PrefabInstance:
       propertyPath: Wall13
       value: 
       objectReference: {fileID: 1724225214}
+    - target: {fileID: 3842050110977511061, guid: aaacce94fafc0534a8f0b6635b7df89d, type: 3}
+      propertyPath: points
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3842050110977511061, guid: aaacce94fafc0534a8f0b6635b7df89d, type: 3}
       propertyPath: plusOne
       value: 

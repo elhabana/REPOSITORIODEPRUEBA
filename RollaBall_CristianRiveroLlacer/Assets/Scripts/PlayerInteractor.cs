@@ -6,13 +6,18 @@ using UnityEngine.UIElements;
 
 public class PlayerInteractor : MonoBehaviour
 {
+    [Header("Points")]
     public int points;
     private int winpointsfinal = 18;
     private int winpointslv1 = 6;
     private int winpointslv2 = 12;
     public TMP_Text pointsText;
+
+    [Header("Rigid Body")]
     public Rigidbody rb1;
     public Rigidbody rb2;
+
+    [Header("Game Objects")]
     public GameObject mission1;
     public GameObject mission2;
     public GameObject mission3;

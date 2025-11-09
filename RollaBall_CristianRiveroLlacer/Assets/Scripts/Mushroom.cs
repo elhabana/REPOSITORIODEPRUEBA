@@ -8,14 +8,14 @@ public class Mushroom : MonoBehaviour
     [Header("Respawn optional")]
     public bool canRespawn = false; //If mushroom can reappear
     public float respawnTime = 10f; //Time in seconds for reappear
-    private bool isCollected=false;
+    public bool isCollected=false;
 
     private Vector3 originalPosition;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        originalPosition=transform.position;
+        originalPosition = transform.position;
     }
 
     // Update is called once per frame
