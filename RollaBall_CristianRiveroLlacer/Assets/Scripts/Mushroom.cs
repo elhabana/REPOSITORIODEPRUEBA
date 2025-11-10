@@ -35,12 +35,12 @@ public class Mushroom : MonoBehaviour
 
             if (player != null)
             {
-                player.mushroomProtect = true; //activa la proteccion en el player
+                player.mushroomProtect = true; //Actives protection in player
                 Debug.Log("Protected");
             }
 
             isCollected = true;
-            gameObject.SetActive(false);//Desappear visually
+            gameObject.SetActive(false); //Desappear visually
         }
     }
 }

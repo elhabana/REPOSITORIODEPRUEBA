@@ -4984,7 +4984,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.41283333, y: 0.48700002}
   m_AnchorMax: {x: 0.58641654, y: 0.55459267}
-  m_AnchoredPosition: {x: 0.30000305, y: -0.81750107}
+  m_AnchoredPosition: {x: 0.2999878, y: -0.81750107}
   m_SizeDelta: {x: -2.898468, y: -1.6350098}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &609028410
@@ -7221,10 +7221,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 599955493}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.30947918, y: 0.81500006}
-  m_AnchorMax: {x: 0.66552085, y: 0.9402593}
-  m_AnchoredPosition: {x: 24, y: 0}
-  m_SizeDelta: {x: -427.4589, y: -85.00001}
+  m_AnchorMin: {x: 0.2511545, y: 0.81500006}
+  m_AnchorMax: {x: 0.7427886, y: 0.943}
+  m_AnchoredPosition: {x: 0.5, y: -1.5}
+  m_SizeDelta: {x: -764.45886, y: -88.00001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &947769569
 MonoBehaviour:
@@ -9161,7 +9161,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1210442835}
   - component: {fileID: 1210442834}
-  - component: {fileID: 1210442836}
   m_Layer: 0
   m_Name: LevelMusic
   m_TagString: Untagged
@@ -9281,19 +9280,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1210442836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1210442833}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5ba2cdc24261334bbed87e31e290047, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelMusic: {fileID: 1210442834}
 --- !u!1 &1274331309
 GameObject:
   m_ObjectHideFlags: 0
@@ -10823,7 +10809,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.41283333, y: 0.27122223}
   m_AnchorMax: {x: 0.58641654, y: 0.3435555}
-  m_AnchoredPosition: {x: 0.30000305, y: 0.5}
+  m_AnchoredPosition: {x: 0.2999878, y: 0.5}
   m_SizeDelta: {x: -2.898468, y: -6.635002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1463697514
@@ -15096,7 +15082,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.41283333, y: 0.37866667}
   m_AnchorMax: {x: 0.58641654, y: 0.4481111}
-  m_AnchoredPosition: {x: 0.30000305, y: 1.0000305}
+  m_AnchoredPosition: {x: 0.2999878, y: 1.0000305}
   m_SizeDelta: {x: -2.898468, y: -3.6350174}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2143060753
@@ -15643,6 +15629,10 @@ PrefabInstance:
       propertyPath: isGrounded
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -1861580948547408060, guid: aaacce94fafc0534a8f0b6635b7df89d, type: 3}
+      propertyPath: levelMusic
+      value: 
+      objectReference: {fileID: 1210442833}
     - target: {fileID: -1861580948547408060, guid: aaacce94fafc0534a8f0b6635b7df89d, type: 3}
       propertyPath: LivesImage_1
       value: 

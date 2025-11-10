@@ -75,7 +75,7 @@ public class PlayerInteractor : MonoBehaviour
         {
             points++;
 
-            // Esta Opcion Consume mas RAM,
+            // The option, that is commented, below this message uses more RAM
             // Destroy(other.gameObject);
             other.gameObject.SetActive(false);
             playerCont.PlaySFX(1);

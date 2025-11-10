@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
 	public GameObject LivesImage_1;
 	public GameObject LivesImage_2;
 	public GameObject soundMushroom;
+	public GameObject levelMusic;
 
 
 	void Start()
@@ -42,6 +43,7 @@ public class PlayerController : MonoBehaviour
 		LivesImage_1.SetActive(true);
 		LivesImage_2.SetActive(true);
         soundMushroom.SetActive(false);
+		levelMusic.SetActive(true);
     }
 	
 	//Update is called once per frame void Update()
@@ -51,7 +53,7 @@ public class PlayerController : MonoBehaviour
 		{
 			//I call Damage to protect
 			Damage();
-			// The player reappear
+			// The player reappears
 			Respawn();
 		}
 
@@ -101,6 +103,7 @@ public class PlayerController : MonoBehaviour
 			Damage();
 			Respawn();
             soundMushroom.SetActive(false);
+            levelMusic.SetActive(true);
         }
 	}
 
@@ -119,6 +122,7 @@ public class PlayerController : MonoBehaviour
 			Debug.Log("You have a mushroom protect");
 			Destroy(other.gameObject); // mushroom desappear
             soundMushroom.SetActive(true);
+            levelMusic.SetActive(false);
         }
 	}
 
