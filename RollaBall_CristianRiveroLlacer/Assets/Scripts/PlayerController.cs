@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 	public AudioSource playeraudio;
 
 	[Header("Movement Parameters")]
-	public float speed = 5;
+	public float speed = 6;
 	public Vector2 moveInput;
 
 	[Header("Jump Parameters")]
