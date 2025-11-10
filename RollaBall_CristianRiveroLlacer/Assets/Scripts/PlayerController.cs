@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 	public AudioSource playeraudio;
 
 	[Header("Movement Parameters")]
-	public float speed = 6;
+	public float speed = 5;
 	public Vector2 moveInput;
 
 	[Header("Jump Parameters")]
@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
 	[Header("Respawn System")]
 	public Transform respawnPoint;
-	public float falllimit = -10;
+	public float falllimit = -3;
 
 	[Header("Protection")]
 	public bool mushroomProtect = false;
@@ -86,6 +86,7 @@ public class PlayerController : MonoBehaviour
 		//if there isn't a mushroom protect then rest lives:
 		--lives;
 	}
+
 	private void FixedUpdate()
 	{
 		PhysicalMovement();
