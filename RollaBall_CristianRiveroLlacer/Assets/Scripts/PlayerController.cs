@@ -12,8 +12,10 @@ public class PlayerController : MonoBehaviour
 	[Header("Editor References")]
 	public Rigidbody playerRb;
 	public AudioSource playeraudio;
+    public GameObject levelMusic;
+	public AudioSource levelAudio;
 
-	[Header("Movement Parameters")]
+    [Header("Movement Parameters")]
 	public float speed = 5;
 	public Vector2 moveInput;
 
@@ -24,17 +26,19 @@ public class PlayerController : MonoBehaviour
 	[Header("Respawn System")]
 	public Transform respawnPoint;
 	public float falllimit = -3;
+	public int timeLeft = 3;
 
-	[Header("Protection")]
+	[Header("Mushroom Properties")]
 	public bool mushroomProtect = false;
+    public GameObject soundMushroom;
+	public Mushroom shieldBreak;
+	public Mushroom shieldImg;
 
+    [Header("Lives")]
 	public int lives;
 	public GameObject LivesImage;
 	public GameObject LivesImage_1;
 	public GameObject LivesImage_2;
-	public GameObject soundMushroom;
-	public GameObject levelMusic;
-
 
 	void Start()
 	{
@@ -74,17 +78,27 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
-	void Damage()
+	public void Damage()
 	{
-		if(mushroomProtect)
+		if (mushroomProtect && shieldBreak.shield == 1)
 		{
-			Debug.Log("Mushroom protect you!");
+			Debug.Log("The mushroom protected you!");
 			mushroomProtect = false;
+			--shieldBreak.shield;
+			ShieldBreak();
 			return;
 		}
 
 		//if there isn't a mushroom protect then rest lives:
 		--lives;
+	}
+
+	void ShieldBreak()
+	{
+		if (shieldBreak.shield == 0)
+		{
+            shieldImg.shieldImage.SetActive(false);
+        }
 	}
 
 	private void FixedUpdate()
@@ -109,11 +123,11 @@ public class PlayerController : MonoBehaviour
 	}
 
 	void Respawn()
-	{ 
-		transform.position = respawnPoint.transform.position;
-		playerRb.linearVelocity = Vector3.zero;
-		PlaySFX(3);
-	}
+	{
+        transform.position = respawnPoint.transform.position;
+        playerRb.linearVelocity = Vector3.zero;
+        PlaySFX(3);
+    }
 
 	void OnTriggerEnter(Collider other)
 	{
@@ -123,7 +137,7 @@ public class PlayerController : MonoBehaviour
 			Debug.Log("You have a mushroom protect");
 			Destroy(other.gameObject); // mushroom desappear
             soundMushroom.SetActive(true);
-            levelMusic.SetActive(false);
+			levelMusic.SetActive(false);
         }
 	}
 

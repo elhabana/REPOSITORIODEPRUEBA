@@ -36,7 +36,7 @@ public class Mushroom : MonoBehaviour
         //Only react if player touch it
         if (other.CompareTag("Player")&& !isCollected)
         {
-            Debug.Log("player touch mushroom");
+            
             PlayerController player =other.GetComponent<PlayerController>();
 
             if (player != null)
@@ -57,6 +57,11 @@ public class Mushroom : MonoBehaviour
         if (shield == 1)
         {
             shieldImage.gameObject.SetActive(true);
+        }
+
+        else if (shield == 0)
+        {
+            shieldImage.gameObject.SetActive(false);
         }
     }
 }
