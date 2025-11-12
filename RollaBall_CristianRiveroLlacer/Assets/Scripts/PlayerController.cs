@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
 	public Transform[] respawnPoints = new Transform[5];
 	public GameObject[] respawnDespawn = new GameObject[4];
     public float falllimit = -3;
+	public int respawnToken = 0;
 
 
 	[Header("Mushroom Properties")]
@@ -122,33 +123,59 @@ public class PlayerController : MonoBehaviour
 		if (playerInteractor.points < 6)
 		{
 			transform.position = respawnPoints[0].transform.position;
+			
+			if (respawnToken == 0)
+			{
+                ++respawnToken;
+            }
         }
 
-		else if (playerInteractor.points >= 6)
+		else if (playerInteractor.points >= 6 && respawnToken == 1)
         {
             respawnDespawn[0].gameObject.SetActive(false);
 			transform.position = respawnPoints[1].transform.position;
+
+            if (respawnToken == 1)
+            {
+                ++respawnToken;
+            }
         }
 
-		else if (playerInteractor.points >= 12)
+		else if (playerInteractor.points >= 12 && respawnToken == 2)
         {
             respawnDespawn[1].gameObject.SetActive(false);
             transform.position = respawnPoints[2].transform.position;
+
+            if (respawnToken == 2)
+            {
+                ++respawnToken;
+            }
         }
 
-        else if (playerInteractor.points >= 18)
+        else if (playerInteractor.points >= 18 && respawnToken == 3)
         {
             respawnDespawn[2].gameObject.SetActive(false);
             transform.position = respawnPoints[3].transform.position;
+
+            if (respawnToken == 3)
+            {
+                ++respawnToken;
+            }
         }
 
-		else if (playerInteractor.points >= 23)
+		else if (playerInteractor.points >= 23 && respawnToken == 4)
         {
             respawnDespawn[3].gameObject.SetActive(false);
             transform.position = respawnPoints[4].transform.position;
+
+            if (respawnToken == 4)
+            {
+                ++respawnToken;
+            }
         }
         playerRb.linearVelocity = Vector3.zero;
         PlaySFX(3);
+		return;
     }
 
 	void OnTriggerEnter(Collider other)

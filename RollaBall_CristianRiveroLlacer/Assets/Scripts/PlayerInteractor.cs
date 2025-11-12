@@ -16,7 +16,7 @@ public class PlayerInteractor : MonoBehaviour
 
     [Header("Game Objects")]
     public GameObject[] mission = new GameObject[4];
-    public GameObject[] lavaWall = new GameObject[3];
+    public GameObject[] lavaWall = new GameObject[4];
 
 
     [Header("Sound References")]
@@ -35,6 +35,7 @@ public class PlayerInteractor : MonoBehaviour
         lavaWall[0].gameObject.SetActive(true);
         lavaWall[1].gameObject.SetActive(true);
         lavaWall[2].gameObject.SetActive(true);
+        lavaWall[3].gameObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -67,6 +68,7 @@ public class PlayerInteractor : MonoBehaviour
             mission[2].gameObject.SetActive(false);
             mission[3].gameObject.SetActive(true);
             lavaWall[2].gameObject.SetActive(false);
+            lavaWall[3].gameObject.SetActive(false);
 
         }
             pointsText.text = "Points: " + points.ToString();
