@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
 	public AudioSource playeraudio;
     public GameObject levelMusic;
 	public AudioSource levelAudio;
+	public PlayerInteractor playerInteractor;
 
     [Header("Movement Parameters")]
 	public float speed = 5;
@@ -22,31 +23,28 @@ public class PlayerController : MonoBehaviour
 	[Header("Jump Parameters")]
 	public float jumpforce = 5.0f;
 	public bool isGrounded;
+	
+	[Header("Respawns")]
+	public Transform[] respawnPoints = new Transform[5];
+	public GameObject[] respawnDespawn = new GameObject[4];
+    public float falllimit = -3;
 
-	[Header("Respawn System")]
-	public Transform respawnPoint;
-	public float falllimit = -3;
-	public int timeLeft = 3;
 
 	[Header("Mushroom Properties")]
 	public bool mushroomProtect = false;
-    public GameObject soundMushroom;
 	public Mushroom shieldBreak;
 	public Mushroom shieldImg;
 
     [Header("Lives")]
 	public int lives;
-	public GameObject LivesImage;
-	public GameObject LivesImage_1;
-	public GameObject LivesImage_2;
+	public GameObject[] LivesImage = new GameObject[3];
 
 	void Start()
 	{
 		lives = 3;
-		LivesImage.SetActive(true);
-		LivesImage_1.SetActive(true);
-		LivesImage_2.SetActive(true);
-        soundMushroom.SetActive(false);
+        LivesImage[0].SetActive(true);
+        LivesImage[1].SetActive(true);
+        LivesImage[2].SetActive(true);
 		levelMusic.SetActive(true);
     }
 	
@@ -63,18 +61,18 @@ public class PlayerController : MonoBehaviour
 
 		if(lives == 2)
 		{
-			LivesImage.SetActive(false);
+			LivesImage[0].SetActive(false);
 		}
 
 		if(lives == 1)
 		{
-			LivesImage_1.SetActive(false);
+			LivesImage[1].SetActive(false);
 		}
 
 		if(lives == 0)
 		{
 			SceneManager.LoadScene(3);
-			LivesImage_2.SetActive(false);
+			LivesImage[2].SetActive(false);
 		}
 	}
 
@@ -82,7 +80,6 @@ public class PlayerController : MonoBehaviour
 	{
 		if (mushroomProtect && shieldBreak.shield == 1)
 		{
-			Debug.Log("The mushroom protected you!");
 			mushroomProtect = false;
 			--shieldBreak.shield;
 			ShieldBreak();
@@ -117,14 +114,39 @@ public class PlayerController : MonoBehaviour
 		{
 			Damage();
 			Respawn();
-            soundMushroom.SetActive(false);
-            levelMusic.SetActive(true);
         }
 	}
 
 	void Respawn()
 	{
-        transform.position = respawnPoint.transform.position;
+		if (playerInteractor.points < 6)
+		{
+			transform.position = respawnPoints[0].transform.position;
+        }
+
+		else if (playerInteractor.points >= 6)
+        {
+            respawnDespawn[0].gameObject.SetActive(false);
+			transform.position = respawnPoints[1].transform.position;
+        }
+
+		else if (playerInteractor.points >= 12)
+        {
+            respawnDespawn[1].gameObject.SetActive(false);
+            transform.position = respawnPoints[2].transform.position;
+        }
+
+        else if (playerInteractor.points >= 18)
+        {
+            respawnDespawn[2].gameObject.SetActive(false);
+            transform.position = respawnPoints[3].transform.position;
+        }
+
+		else if (playerInteractor.points >= 23)
+        {
+            respawnDespawn[3].gameObject.SetActive(false);
+            transform.position = respawnPoints[4].transform.position;
+        }
         playerRb.linearVelocity = Vector3.zero;
         PlaySFX(3);
     }
@@ -136,8 +158,7 @@ public class PlayerController : MonoBehaviour
 			mushroomProtect = true; //protect active
 			Debug.Log("You have a mushroom protect");
 			Destroy(other.gameObject); // mushroom desappear
-            soundMushroom.SetActive(true);
-			levelMusic.SetActive(false);
+            PlaySFX(5);
         }
 	}
 
