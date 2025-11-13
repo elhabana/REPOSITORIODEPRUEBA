@@ -12,7 +12,6 @@ public class SceneManagement : MonoBehaviour
 
     public void ExitGame() 
     {
-        material.color = Color.red;
         Debug.Log("You closed the game.");
         Application.Quit();
     }
