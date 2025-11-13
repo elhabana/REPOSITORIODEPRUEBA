@@ -19,9 +19,8 @@ public class PlayerInteractor : MonoBehaviour
     public GameObject[] lavaWall = new GameObject[7];
 
 
-    [Header("Sound References")]
+    [Header("References")]
     public PlayerController playerCont;
-
 
     void Start()
     {
@@ -30,19 +29,12 @@ public class PlayerInteractor : MonoBehaviour
         rb[1].useGravity = false;
         rb[2].useGravity = false;
 
-        mission[0].gameObject.SetActive(true);
         mission[1].gameObject.SetActive(false);
         mission[2].gameObject.SetActive(false);
         mission[3].gameObject.SetActive(false);
 
-        lavaWall[0].gameObject.SetActive(true);
-        lavaWall[1].gameObject.SetActive(true);
-        lavaWall[2].gameObject.SetActive(true);
         lavaWall[3].gameObject.SetActive(false);
-        lavaWall[4].gameObject.SetActive(true);
-        lavaWall[5].gameObject.SetActive(true);
-        lavaWall[6].gameObject.SetActive(true);
-        lavaWall[7].gameObject.SetActive(true);
+        
     }
 
     // Update is called once per frame
@@ -68,7 +60,6 @@ public class PlayerInteractor : MonoBehaviour
         {
             rb[2].useGravity = true;
             lavaWall[2].gameObject.SetActive(false);
-            lavaWall[3].gameObject.SetActive(false);
         }
 
         else if (points == winpoints[3])
@@ -78,11 +69,12 @@ public class PlayerInteractor : MonoBehaviour
             mission[3].gameObject.SetActive(true);
             lavaWall[4].gameObject.SetActive(false);
             lavaWall[5].gameObject.SetActive(false);
+            lavaWall[6].gameObject.SetActive(false);
         }
 
         else if (points == winpoints[4])
         {
-            rb[3].useGravity = true;
+            rb[4].useGravity = true;
             mission[3].gameObject.SetActive(false);
             mission[4].gameObject.SetActive(true);
             lavaWall[7].gameObject.SetActive(false);
@@ -99,28 +91,34 @@ public class PlayerInteractor : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.CompareTag("PickUp"))
+        if (collider.gameObject.CompareTag("Trigger"))
+        {
+            lavaWall[2].gameObject.SetActive(true);
+            Debug.Log("works");
+        }
+
+        else if (collider.gameObject.CompareTag("Trigger2"))
+        {
+            lavaWall[5].gameObject.SetActive(true);
+            lavaWall[6].gameObject.SetActive(true);
+            collider.enabled = false;
+            collider.enabled = true;
+            Debug.Log("works");
+        }
+
+        else if (collider.gameObject.CompareTag("Trigger3"))
+        {
+            lavaWall[3].gameObject.SetActive(true);
+            playerCont.shortcut = true;
+        }
+
+        else if (collider.gameObject.CompareTag("PickUp"))
         {
             points++;
             collider.gameObject.SetActive(false);
             playerCont.PlaySFX(1);
             // The option, that is commented, below this message uses more RAM
             // Destroy(collider.gameObject);
-        }
-
-        if (collider.gameObject.CompareTag("Trigger"))
-        {
-            lavaWall[2].gameObject.SetActive(true);
-        }
-
-        if (collider.gameObject.CompareTag("Trigger2"))
-        {
-            lavaWall[5].gameObject.SetActive(true);
-        }
-
-        if (collider.gameObject.CompareTag("Trigger3"))
-        {
-            lavaWall[3].gameObject.SetActive(true);
         }
     }
 }

@@ -25,9 +25,9 @@ public class PlayerController : MonoBehaviour
 	public bool isGrounded;
 
 	[Header("Respawns")]
-	public Transform[] respawnPoints = new Transform[6];
+	public Transform[] respawnPoints = new Transform[8];
 	public float falllimit = -3;
-
+	public bool shortcut;
 
 	[Header("Mushroom Properties")]
 	public bool mushroomProtect = false;
@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
         LivesImage[1].SetActive(true);
         LivesImage[2].SetActive(true);
 		levelMusic.SetActive(true);
+		shortcut = false;
     }
 	
 	//Update is called once per frame void Update()
@@ -116,30 +117,39 @@ public class PlayerController : MonoBehaviour
 			transform.position = respawnPoints[1].transform.position;
 		}
 
-        else if (playerInteractor.points < 15)
+        else if (playerInteractor.points <= 15)
         {
-            transform.position = respawnPoints[6].transform.position;
+            if (shortcut == true)
+			{
+                transform.position = respawnPoints[6].transform.position;
+            }
+			else
+			{
+                transform.position = respawnPoints[2].transform.position;
+            }
         }
-
-        else if (playerInteractor.points < 15)
-		{
-			transform.position = respawnPoints[2].transform.position;
-		}
 
         else if (playerInteractor.points < 18)
         {
             transform.position = respawnPoints[3].transform.position;
         }
 
-        else if (playerInteractor.points < 23)
+
+        else if (playerInteractor.points < 24)
         {
             transform.position = respawnPoints[4].transform.position;
         }
 
-        else if (playerInteractor.points == 23)
-        {
-            transform.position = respawnPoints[5].transform.position;
-        }
+		else if (playerInteractor.points < 29)
+		{
+			transform.position = respawnPoints[7].transform.position;
+		}
+
+		else if (playerInteractor.points <= 31)
+		{
+			transform.position = respawnPoints[5].transform.position;
+		}
+
         playerRb.linearVelocity = Vector3.zero;
 		PlaySFX(3);
     }
@@ -150,7 +160,7 @@ public class PlayerController : MonoBehaviour
 		{
 			mushroomProtect = true; //protect active
 			Debug.Log("You have a mushroom protect");
-			Destroy(other.gameObject); // mushroom desappear
+			Destroy(other.gameObject); // mushroom disappear
             PlaySFX(5);
         }
 	}
