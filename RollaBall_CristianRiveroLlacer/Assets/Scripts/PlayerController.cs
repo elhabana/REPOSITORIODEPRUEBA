@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 	[Header("Sound Configuration")]
 	public AudioClip[] soundcollection;
 
-	[Header("Editor References")]
+	[Header("References")]
 	public Rigidbody playerRb;
 	public AudioSource playeraudio;
     public GameObject levelMusic;
@@ -25,15 +25,12 @@ public class PlayerController : MonoBehaviour
 	public bool isGrounded;
 
 	[Header("Respawns")]
-	public Transform[] respawnPoints = new Transform[5];
-    public float falllimit = -3;
-	public int respawnToken;
-	public int notCrash;
+	public Transform[] respawnPoints = new Transform[6];
+	public float falllimit = -3;
 
 
 	[Header("Mushroom Properties")]
 	public bool mushroomProtect = false;
-	public Mushroom shieldBreak;
 	public Mushroom shieldImg;
 
     [Header("Lives")]
@@ -47,8 +44,6 @@ public class PlayerController : MonoBehaviour
         LivesImage[1].SetActive(true);
         LivesImage[2].SetActive(true);
 		levelMusic.SetActive(true);
-		respawnToken = 0;
-		notCrash = 0;
     }
 	
 	//Update is called once per frame void Update()
@@ -81,24 +76,13 @@ public class PlayerController : MonoBehaviour
 
 	public void Damage()
 	{
-		if (mushroomProtect && shieldBreak.shield == 1)
+		if (mushroomProtect)
 		{
 			mushroomProtect = false;
-			--shieldBreak.shield;
-			ShieldBreak();
-			return;
-		}
-
-		//if there isn't a mushroom protect then rest lives:
-		--lives;
-	}
-
-	void ShieldBreak()
-	{
-		if (shieldBreak.shield == 0)
-		{
             shieldImg.shieldImage.SetActive(false);
-        }
+            return;
+		}
+		--lives;
 	}
 
 	private void FixedUpdate()
@@ -125,17 +109,22 @@ public class PlayerController : MonoBehaviour
 		if (playerInteractor.points < 6)
 		{
 			transform.position = respawnPoints[0].transform.position;
+		}
+
+		else if (playerInteractor.points < 12)
+		{
+			transform.position = respawnPoints[1].transform.position;
+		}
+
+        else if (playerInteractor.points < 15)
+        {
+            transform.position = respawnPoints[6].transform.position;
         }
 
-        else if (playerInteractor.points < 12)
-        {
-            transform.position = respawnPoints[1].transform.position;
-        }
-
-        else if (playerInteractor.points < 14)
-        {
-            transform.position = respawnPoints[2].transform.position;
-        }
+        else if (playerInteractor.points < 15)
+		{
+			transform.position = respawnPoints[2].transform.position;
+		}
 
         else if (playerInteractor.points < 18)
         {

@@ -27,7 +27,7 @@ public class Mushroom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Rotate for atractive visual effect
+        // Rotate for attractive visual effect
         transform.Rotate(Vector3.up*rotationSpeed * Time.deltaTime);
     }
 
@@ -47,7 +47,7 @@ public class Mushroom : MonoBehaviour
             }
 
             isCollected = true;
-            gameObject.SetActive(false); //Desappear visually
+            gameObject.SetActive(false); //disappear visually
         }
     }
 
