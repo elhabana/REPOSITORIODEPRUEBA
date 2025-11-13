@@ -23,12 +23,12 @@ public class PlayerController : MonoBehaviour
 	[Header("Jump Parameters")]
 	public float jumpforce = 5.0f;
 	public bool isGrounded;
-	
+
 	[Header("Respawns")]
 	public Transform[] respawnPoints = new Transform[5];
-	public GameObject[] respawnDespawn = new GameObject[4];
     public float falllimit = -3;
-	public int respawnToken = 0;
+	public int respawnToken;
+	public int notCrash;
 
 
 	[Header("Mushroom Properties")]
@@ -47,6 +47,8 @@ public class PlayerController : MonoBehaviour
         LivesImage[1].SetActive(true);
         LivesImage[2].SetActive(true);
 		levelMusic.SetActive(true);
+		respawnToken = 0;
+		notCrash = 0;
     }
 	
 	//Update is called once per frame void Update()
@@ -123,59 +125,34 @@ public class PlayerController : MonoBehaviour
 		if (playerInteractor.points < 6)
 		{
 			transform.position = respawnPoints[0].transform.position;
-			
-			if (respawnToken == 0)
-			{
-                ++respawnToken;
-            }
         }
 
-		else if (playerInteractor.points >= 6 && respawnToken == 1)
+        else if (playerInteractor.points < 12)
         {
-            respawnDespawn[0].gameObject.SetActive(false);
-			transform.position = respawnPoints[1].transform.position;
-
-            if (respawnToken == 1)
-            {
-                ++respawnToken;
-            }
+            transform.position = respawnPoints[1].transform.position;
         }
 
-		else if (playerInteractor.points >= 12 && respawnToken == 2)
+        else if (playerInteractor.points < 14)
         {
-            respawnDespawn[1].gameObject.SetActive(false);
             transform.position = respawnPoints[2].transform.position;
-
-            if (respawnToken == 2)
-            {
-                ++respawnToken;
-            }
         }
 
-        else if (playerInteractor.points >= 18 && respawnToken == 3)
+        else if (playerInteractor.points < 18)
         {
-            respawnDespawn[2].gameObject.SetActive(false);
             transform.position = respawnPoints[3].transform.position;
-
-            if (respawnToken == 3)
-            {
-                ++respawnToken;
-            }
         }
 
-		else if (playerInteractor.points >= 23 && respawnToken == 4)
+        else if (playerInteractor.points < 23)
         {
-            respawnDespawn[3].gameObject.SetActive(false);
             transform.position = respawnPoints[4].transform.position;
+        }
 
-            if (respawnToken == 4)
-            {
-                ++respawnToken;
-            }
+        else if (playerInteractor.points == 23)
+        {
+            transform.position = respawnPoints[5].transform.position;
         }
         playerRb.linearVelocity = Vector3.zero;
-        PlaySFX(3);
-		return;
+		PlaySFX(3);
     }
 
 	void OnTriggerEnter(Collider other)
