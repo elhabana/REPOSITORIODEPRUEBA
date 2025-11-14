@@ -2,16 +2,16 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Codigo_Pausa : MonoBehaviour
+public class PauseCode : MonoBehaviour
 {
 
-    public GameObject objetomenupausa;
-    public bool Pausa = false;
+    public GameObject objectpause;
+    public bool Pause = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        objetomenupausa.SetActive(false);
+        objectpause.SetActive(false);
         Time.timeScale = 1;
     }
 
@@ -20,36 +20,36 @@ public class Codigo_Pausa : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (Pausa == false)
+            if (Pause == false)
             {
-                objetomenupausa.SetActive(true);
-                Pausa = true;
+                objectpause.SetActive(true);
+                Pause = true;
 
                 Time.timeScale = 0;
                 Cursor.visible = true;
             }
-            else if (Pausa == true)
+            else if (Pause == true)
             {
-                Resumir();
+                Continue();
             }
         }
     }
 
-    public void Resumir()
+    public void Continue()
     {
-        objetomenupausa.SetActive(false);
-        Pausa = false;
+        objectpause.SetActive(false);
+        Pause = false;
 
         Time.timeScale = 1;
         Cursor.visible = false;
     }
 
-    public void IrAlMenu(string NombreMenu)
+    public void GoToMenu(string NameMenu)
     {
-        SceneManager.LoadScene(NombreMenu);
+        SceneManager.LoadScene(NameMenu);
     }
 
-    public void SalirDelJuego()
+    public void LeaveGame()
     {
         Application.Quit();
     }

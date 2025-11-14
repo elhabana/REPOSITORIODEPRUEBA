@@ -12,14 +12,14 @@ public class Volume : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        slider.value = PlayerPrefs.GetFloat("volumenAudio", 0.5f);
+        slider.value = PlayerPrefs.GetFloat("audioVolume", 0.5f);
         AudioListener.volume = slider.value;
     }
 
     public void ChangeSlider(float valor)
     {
         slider.value = valor;
-        PlayerPrefs.SetFloat("volumenAudio", slider.value);
+        PlayerPrefs.SetFloat("audioVolume", slider.value);
         AudioListener.volume = slider.value;
     }
 

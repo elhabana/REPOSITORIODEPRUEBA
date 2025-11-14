@@ -122,12 +122,12 @@ public class PlayerInteractor : MonoBehaviour
        
         timeTimer += Time.deltaTime;
 
-        // Convierte a minutos y segundos
-        int minutos = Mathf.FloorToInt(timeTimer / 60);
-        int segundos = Mathf.FloorToInt(timeTimer % 60);
+        // Convert to minutes and seconds
+        int min = Mathf.FloorToInt(timeTimer / 60);
+        int sec = Mathf.FloorToInt(timeTimer % 60);
 
-        // Actualiza el texto
-        textTimer.text = string.Format("{0:00}:{1:00}", minutos, segundos);
+        // Updates de text
+        textTimer.text = string.Format("{0:00}:{1:00}", min, sec);
     }
 
     IEnumerator MissionFade()

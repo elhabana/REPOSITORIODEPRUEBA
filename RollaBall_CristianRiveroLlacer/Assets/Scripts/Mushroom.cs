@@ -37,7 +37,7 @@ public class Mushroom : MonoBehaviour
         if (other.CompareTag("Player")&& !isCollected)
         {
             
-            PlayerController player =other.GetComponent<PlayerController>();
+            PlayerController player = other.GetComponent<PlayerController>();
 
             if (player != null)
             {
