@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour
 			transform.position = respawnPoints[1].transform.position;
 		}
 
-        else if (playerInteractor.points <= 15)
+        else if (playerInteractor.points < 18)
         {
             if (shortcut == true)
 			{
@@ -129,7 +129,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        else if (playerInteractor.points < 18)
+        else if (playerInteractor.points < 16 && !shortcut)
         {
             transform.position = respawnPoints[3].transform.position;
         }
