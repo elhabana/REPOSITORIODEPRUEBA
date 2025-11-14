@@ -15,6 +15,7 @@ TagManager:
   - Trigger3
   - Trigger4
   - WinMushroom
+  - Trigger5
   layers:
   - Default
   - TransparentFX

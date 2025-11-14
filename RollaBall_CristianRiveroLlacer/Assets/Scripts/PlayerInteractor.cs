@@ -9,7 +9,7 @@ public class PlayerInteractor : MonoBehaviour
 {
     [Header("Points")]
     public int points;
-    private int[] winpoints = new int[6] { 6, 12, 15, 18, 24, 32 };
+    private int[] winpoints = new int[7] { 6, 12, 15, 18, 24, 31, 32 };
     public TMP_Text pointsText;
     public TMP_Text WinTxt;
     public int WinNum = 31;
@@ -21,8 +21,10 @@ public class PlayerInteractor : MonoBehaviour
     public GameObject mission;
     public GameObject[] lavaWall = new GameObject[7];
     public GameObject[] lavaFloor = new GameObject[8];
-    public bool lavaDesactivada;
-    public bool lavaDesactivada2;
+    public GameObject[] LastWall = new GameObject[2];
+    public bool lavaActive;
+    public bool lavaActive2;
+    public bool winDoorActive;
 
     [Header("Cronómetro")]
     public GameObject objTimer;
@@ -79,16 +81,16 @@ public class PlayerInteractor : MonoBehaviour
             lavaWall[1].gameObject.SetActive(false);
         }
 
-        else if (!lavaDesactivada && points == winpoints[2])
+        else if (!lavaActive && points == winpoints[2])
         {
             rb[2].useGravity = true;
-            lavaDesactivada = true;
+            lavaActive = true;
             lavaWall[2].gameObject.SetActive(false);
         }
 
-        else if (!lavaDesactivada2 && points == winpoints[3])
+        else if (!lavaActive2 && points == winpoints[3])
         {
-            lavaDesactivada2 = true;
+            lavaActive2 = true;
             rb[3].useGravity = true;
             lavaWall[4].gameObject.SetActive(false);
             lavaWall[5].gameObject.SetActive(false);
@@ -102,8 +104,15 @@ public class PlayerInteractor : MonoBehaviour
             lavaWall[7].gameObject.SetActive(false);
             lavaWall[8].gameObject.SetActive(false);
         }
+        
+        else if (!winDoorActive && points == winpoints[5])
+        {
+            LastWall[0].gameObject.SetActive(false);
+            LastWall[1].gameObject.SetActive(false);
+            winDoorActive = true;
+        }
 
-        else if (points == winpoints[5])
+        else if (points == winpoints[6])
         {
             SceneManager.LoadScene(2);
         }
@@ -168,6 +177,12 @@ public class PlayerInteractor : MonoBehaviour
             lavaFloor[5].gameObject.SetActive(true);
             lavaFloor[6].gameObject.SetActive(true);
             lavaFloor[7].gameObject.SetActive(true);
+        }
+
+        else if (collider.gameObject.CompareTag("Trigger5"))
+        {
+            LastWall[0].gameObject.SetActive(true);
+            LastWall[1].gameObject.SetActive(true);
         }
 
         else if (collider.gameObject.CompareTag("PickUp"))
