@@ -42,7 +42,6 @@ public class Mushroom : MonoBehaviour
             if (player != null)
             {
                 player.mushroomProtect = true; //Actives protection in player
-                Debug.Log("Protected");
                 ShieldAdd();
             }
 
