@@ -223,7 +223,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: SCN_Victory
+          m_StringArgument: SCN_Loser
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &220288020
@@ -879,10 +879,10 @@ MonoBehaviour:
   m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
-    topLeft: {r: 0.06666667, g: 0.43529415, b: 0.078431375, a: 1}
-    topRight: {r: 0.18431373, g: 0.91372555, b: 0.18431373, a: 1}
-    bottomLeft: {r: 0.18431373, g: 0.79215693, b: 0.4431373, a: 1}
-    bottomRight: {r: 0.68235296, g: 0.8313726, b: 0.14509805, a: 1}
+    topLeft: {r: 1, g: 0.25471687, b: 0.28365964, a: 1}
+    topRight: {r: 1, g: 0.27735847, b: 0.31367227, a: 1}
+    bottomLeft: {r: 0.5773585, g: 0.064271934, b: 0.07751287, a: 1}
+    bottomRight: {r: 0.2603773, g: 0, b: 0.0457908, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -1108,8 +1108,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 25567f42274df1b4099eeaaa72135280, type: 3}
-  m_Resource: {fileID: 8300000, guid: 25567f42274df1b4099eeaaa72135280, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 825907228e431594186dcd0351d7324a, type: 3}
+  m_Resource: {fileID: 8300000, guid: 825907228e431594186dcd0351d7324a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1244,8 +1244,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.06223311, y: 0.036000002}
   m_AnchorMax: {x: 0.93575066, y: 0.9620001}
-  m_AnchoredPosition: {x: 2, y: 12}
-  m_SizeDelta: {x: -0.17993164, y: 0.5629883}
+  m_AnchoredPosition: {x: 2.4699707, y: 14}
+  m_SizeDelta: {x: 0.76008475, y: -61.560066}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1855656638
 MonoBehaviour:
@@ -1267,10 +1267,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "FLAMING BALL: a game born from fire, will, and code.\n\nDeveloped by:\n\nArmando
+  m_text: "FLAMING BALL, a game born from fire, will, and code.\n\nDeveloped by:\n\nArmando
     Enrique Lemoine Moles \u2013 Forger of digital destiny\nCristian Rivero Llacer
-    (Habana) \u2013 Master of balance and sparks\nMaria Orellana Del Castillo \u2013
-    Guardian of worlds... and the mushrooms\nJavier Arjona Luna \u2013 Architect
+    (Habana) \u2013 Master of balance and sparks\nMar\xEDa Orellana Del Castillo
+    \u2013 Guardian of worlds... and the mushrooms\nJavier Arjona Luna \u2013 Architect
     of challenge and adventure\n\nCreated with UNITY \u2013 The engine where dreams
     take shape\n\nAnd now\u2026 When the final level falls before you, when the flame
     burns brighter than ever, there is only one thing left to say:\n\nTHANK YOU FOR
@@ -1288,10 +1288,10 @@ MonoBehaviour:
   m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
-    topLeft: {r: 0.06666667, g: 0.43529415, b: 0.078431375, a: 1}
-    topRight: {r: 0.18431373, g: 0.91372555, b: 0.18431373, a: 1}
-    bottomLeft: {r: 0.18431373, g: 0.79215693, b: 0.4431373, a: 1}
-    bottomRight: {r: 0.68235296, g: 0.8313726, b: 0.14509805, a: 1}
+    topLeft: {r: 1, g: 0.25471687, b: 0.28365964, a: 1}
+    topRight: {r: 1, g: 0.27735847, b: 0.31367227, a: 1}
+    bottomLeft: {r: 0.5773585, g: 0.064271934, b: 0.07751287, a: 1}
+    bottomRight: {r: 0.2603773, g: 0, b: 0.0457908, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -1307,7 +1307,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 8
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
