@@ -115,6 +115,7 @@ public class PlayerInteractor : MonoBehaviour
         else if (points == winpoints[6])
         {
             SceneManager.LoadScene(2);
+            UnityEngine.Cursor.visible = true;
         }
 
         pointsText.text = "Points: " + points.ToString();
