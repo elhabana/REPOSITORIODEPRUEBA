@@ -23,9 +23,7 @@ public class FullScreen : MonoBehaviour
         }
 
         CheckResolution();
-        var refresh = new RefreshRate { numerator = 60, denominator = 1 };
-        Screen.SetResolution(1920, 1080, FullScreenMode.ExclusiveFullScreen, refresh);
-
+        LoadSavedResolution();
     }
     void Update()
     {
@@ -47,7 +45,7 @@ public class FullScreen : MonoBehaviour
 
         for (int i = 0; i < resolutions.Length; i++)
         {
-            string option = resolutions[i].width + " x " + resolutions[i].height;
+            string option = resolutions[i].width + " x " + resolutions[i].height + resolutions[i].refreshRateRatio.value + "Hz";
             options.Add(option);
 
             if (Screen.fullScreen && resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
@@ -64,12 +62,25 @@ public class FullScreen : MonoBehaviour
 
     }
 
+    void LoadSavedResolution()
+    {
+        int saved = PlayerPrefs.GetInt("resolutionIndex", resolutionsDropDown.value);
+        resolutionsDropDown.value = saved;
+        resolutionsDropDown.RefreshShownValue();
+    }
+
+
     public void ChangeResolution(int resolutionIndex)
     {
-        PlayerPrefs.SetInt("numeroResolucion", resolutionsDropDown.value);  
+        PlayerPrefs.SetInt("numberResolution", resolutionsDropDown.value);
+        PlayerPrefs.Save();
+
+        FullScreenMode mode = Screen.fullScreen 
+            ? FullScreenMode.FullScreenWindow 
+            : FullScreenMode.Windowed;
 
         Resolution resolution = resolutions[resolutionIndex];
-        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+        Screen.SetResolution(resolution.width, resolution.height, mode, resolution.refreshRateRatio);
     }
 
 }
