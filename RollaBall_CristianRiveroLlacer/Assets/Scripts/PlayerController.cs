@@ -71,7 +71,8 @@ public class PlayerController : MonoBehaviour
 		if(lives == 0)
 		{
 			SceneManager.LoadScene(3);
-			LivesImage[2].SetActive(false);
+            UnityEngine.Cursor.visible = true;
+            LivesImage[2].SetActive(false);
 		}
 	}
 
