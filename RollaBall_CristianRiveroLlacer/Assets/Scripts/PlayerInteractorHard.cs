@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using System.Collections;
 
-public class PlayerInteractor : MonoBehaviour
+public class PlayerInteractorHard : MonoBehaviour
 {
     [Header("Points")]
     public int points;
@@ -15,14 +15,13 @@ public class PlayerInteractor : MonoBehaviour
     public int WinNum = 31;
 
     [Header("Rigid Body")]
-    public Rigidbody[] rb = new Rigidbody[4];
+    public Rigidbody[] rb = new Rigidbody[5];
 
     [Header("Game Objects")]
     public GameObject mission;
     public GameObject[] lavaWall = new GameObject[7];
     public GameObject[] lavaFloor = new GameObject[8];
     public GameObject[] LastWall = new GameObject[2];
-    public GameObject flechaHard;
     public bool lavaActive;
     public bool lavaActive2;
     public bool winDoorActive;
@@ -33,7 +32,7 @@ public class PlayerInteractor : MonoBehaviour
     private float timeTimer;
 
     [Header("References")]
-    public PlayerController playerCont;
+    public PlayerControllerHard playerCont;
 
     [Header("Desvanecer")]
     public float timeMission = 2f;
@@ -57,8 +56,6 @@ public class PlayerInteractor : MonoBehaviour
         lavaFloor[5].gameObject.SetActive(false);
         lavaFloor[6].gameObject.SetActive(false);
         lavaFloor[7].gameObject.SetActive(false);
-
-        flechaHard.gameObject.SetActive(false);
 
         if (mission != null)
         {
@@ -170,7 +167,6 @@ public class PlayerInteractor : MonoBehaviour
         {
             lavaWall[3].gameObject.SetActive(true);
             playerCont.shortcut = true;
-            flechaHard.gameObject.SetActive(true);
         }
 
         else if (collider.gameObject.CompareTag("Trigger4"))
@@ -199,7 +195,7 @@ public class PlayerInteractor : MonoBehaviour
             playerCont.PlaySFX(1);
             // The option, that is commented, below this message uses more RAM
             // Destroy(collider.gameObject);
-        }
+        } 
     }
 }
 

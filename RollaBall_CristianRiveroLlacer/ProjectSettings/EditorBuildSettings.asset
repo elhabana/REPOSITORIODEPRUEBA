@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu_SCNs/CreditsSceneLose.Unity
     guid: 83709feb7342403469deb102babd78dd
+  - enabled: 1
+    path: Assets/Scenes/Gameplay_SCNs/SCN_Hardcore.unity
+    guid: 4676917fadc43d14fbd3e9a6dc62a35e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 08d8b4b2b683ed542b7e002f4af1cd32, type: 3}
   m_UseUCBPForAssetBundles: 0

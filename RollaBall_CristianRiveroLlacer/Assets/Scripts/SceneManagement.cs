@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class SceneManagement : MonoBehaviour
 {
     public Material material;
+    public HModeChecker hChecker;
 
     public void LoadScene(int sceneToLoad)
     {
@@ -16,5 +17,16 @@ public class SceneManagement : MonoBehaviour
         Application.Quit();
     }
 
+    public void LoadGameMode()
+    {
+        if (hChecker.hModeChecker)
+        {
+            SceneManager.LoadScene(7);
+        }
+        else
+        {
+            SceneManager.LoadScene(1);
+        }
+    }
 }
 
