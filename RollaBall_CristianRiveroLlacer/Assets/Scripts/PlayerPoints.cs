@@ -10,7 +10,7 @@ public class PlayerPoints : MonoBehaviour
     {
         if (points < 32)
         {
-            points = 0;
+            points = 31;
             hModeCheck = false;
         }
         else if (points == 32)
