@@ -71,8 +71,15 @@ public class PlayerController : MonoBehaviour
 		if(lives == 0)
 		{
 			SceneManager.LoadScene(3);
+<<<<<<< Updated upstream
             UnityEngine.Cursor.visible = true;
             LivesImage[2].SetActive(false);
+=======
+			PlayerPoints.points = 0;
+			print(PlayerPoints.points);
+
+			LivesImage[2].SetActive(false);
+>>>>>>> Stashed changes
 		}
 	}
 
