@@ -39,30 +39,53 @@ public class FullScreen : MonoBehaviour
         Screen.fullScreen = fullScreen;
     }
 
+
     public void ReviewResolution()
     {
+      
         resolutions = Screen.resolutions;
-        resolutionDropDown.ClearOptions();
-        List<string> options = new List<string>();
-        int currentResolution = 0;
 
+        resolutionDropDown.ClearOptions();
+     
+        HashSet<string> uniqueResolutionStrings = new HashSet<string>();
+        List<string> options = new List<string>();
+        int currentResolutionIndex = 0;
+        int currentIndex = 0;
+
+     
         for (int i = 0; i < resolutions.Length; i++)
         {
             string option = resolutions[i].width + " x " + resolutions[i].height;
-            options.Add(option);
 
-            if (Screen.fullScreen && resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
+        
+            if (uniqueResolutionStrings.Add(option))
             {
-                currentResolution = i;
+         
+                options.Add(option);
+
+            
+                if (resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
+                {
+                  
+                    currentResolutionIndex = currentIndex;
+                }
+
+                currentIndex++;
             }
         }
-
         resolutionDropDown.AddOptions(options);
-        resolutionDropDown.value = currentResolution;
+        resolutionDropDown.value = currentResolutionIndex;
         resolutionDropDown.RefreshShownValue();
-
-        resolutionDropDown.value = PlayerPrefs.GetInt("numberResolution", 0);
-
+        int savedResolutionIndex = PlayerPrefs.GetInt("numberResolution", 0);
+       
+        if (savedResolutionIndex >= 0 && savedResolutionIndex < options.Count)
+        {
+            resolutionDropDown.value = savedResolutionIndex;
+        }
+        else
+        {
+            resolutionDropDown.value = currentResolutionIndex;
+        }
     }
 
     public void ChangeResolution(int resolutionIndex)
