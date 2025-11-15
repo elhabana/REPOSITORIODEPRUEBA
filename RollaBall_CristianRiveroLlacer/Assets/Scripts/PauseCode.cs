@@ -13,6 +13,7 @@ public class PauseCode : MonoBehaviour
     {
         objectpause.SetActive(false);
         Time.timeScale = 1;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
