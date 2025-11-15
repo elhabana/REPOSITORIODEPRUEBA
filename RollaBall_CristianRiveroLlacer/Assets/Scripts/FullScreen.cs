@@ -45,7 +45,7 @@ public class FullScreen : MonoBehaviour
 
         for (int i = 0; i < resolutions.Length; i++)
         {
-            string option = resolutions[i].width + " x " + resolutions[i].height + resolutions[i].refreshRateRatio.value + "Hz";
+            string option = resolutions[i].width + " x " + resolutions[i].height + " @" + resolutions[i].refreshRateRatio.value + "Hz";
             options.Add(option);
 
             if (Screen.fullScreen && resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
