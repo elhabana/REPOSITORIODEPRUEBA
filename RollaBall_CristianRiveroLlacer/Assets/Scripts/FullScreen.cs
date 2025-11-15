@@ -26,6 +26,7 @@ public class FullScreen : MonoBehaviour
         }
 
         ReviewResolution();
+        ChangeResolution(resolutionDropDown.value);
     }
 
     // Update is called once per frame
