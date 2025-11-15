@@ -8,9 +8,8 @@ public class FullScreen : MonoBehaviour
 {
     public Toggle toggle;
 
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public TMP_Dropdown resolutionsDropDown;
+    Resolution[] resolutions;
     void Start()
     {
 
@@ -23,12 +22,9 @@ public class FullScreen : MonoBehaviour
             toggle.isOn = false;
         }
 
-       
-    
-    }
+        CheckResolution();
 
-    // Update is called once per frame
-    void Update()
+    }void Update()
     {
         
     }
@@ -37,13 +33,12 @@ public class FullScreen : MonoBehaviour
     {
         Screen.fullScreen = fullScreen;
     }
-<<<<<<< HEAD
-=======
 
-    public void ReviewResolution()
+
+    public void CheckResolution()
     {
         resolutions = Screen.resolutions;
-        resolutionDropDown.ClearOptions();
+        resolutionsDropDown.ClearOptions();
         List<string> options = new List<string>();
         int currentResolution = 0;
 
@@ -58,20 +53,20 @@ public class FullScreen : MonoBehaviour
             }
         }
 
-        resolutionDropDown.AddOptions(options);
-        resolutionDropDown.value = currentResolution;
-        resolutionDropDown.RefreshShownValue();
+        resolutionsDropDown.AddOptions(options);
+        resolutionsDropDown.value = currentResolution;
+        resolutionsDropDown.RefreshShownValue();
 
-        resolutionDropDown.value = PlayerPrefs.GetInt("numberResolution", 0);
+        resolutionsDropDown.value = PlayerPrefs.GetInt("numberResolution", 0);
 
     }
 
     public void ChangeResolution(int resolutionIndex)
     {
-        PlayerPrefs.SetInt("numberResolution", resolutionDropDown.value);
+        PlayerPrefs.SetInt("numeroResolucion", resolutionsDropDown.value);  
 
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
->>>>>>> parent of 26472b0 (arreglito)
+
 }
