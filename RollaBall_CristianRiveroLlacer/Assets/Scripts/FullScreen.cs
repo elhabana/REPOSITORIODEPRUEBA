@@ -23,7 +23,8 @@ public class FullScreen : MonoBehaviour
         }
 
         CheckResolution();
-   
+        var refresh = new RefreshRate { numerator = 60, denominator = 1 };
+        Screen.SetResolution(1920, 1080, FullScreenMode.ExclusiveFullScreen, refresh);
 
     }
     void Update()
