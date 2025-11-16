@@ -72,15 +72,11 @@ public class PlayerController : MonoBehaviour
 		{
 			SceneManager.LoadScene(3);
 			
-			print(PlayerPoints.points);
             Cursor.visible = true;
             LivesImage[2].SetActive(false);
 
-			if (PlayerPoints.points < 32)
-			{
-                PlayerPoints.points = 0;
-            }
-		}
+            PlayerInteractor.finalTime = playerInteractor.timeTimer;
+        }
 	}
 
 	public void Damage()
@@ -180,7 +176,14 @@ public class PlayerController : MonoBehaviour
 	{
 		playerRb.AddForce(Vector3.forward * speed * moveInput.y);
 		playerRb.AddForce(Vector3.right* speed * moveInput.x);
-	}
+
+        if (moveInput.magnitude < 0.1f)
+        {
+            Vector3 horizontalVel = new Vector3(playerRb.linearVelocity.x, 0, playerRb.linearVelocity.z);
+            horizontalVel *= 0.98f; // Factor de frenado suave
+            playerRb.linearVelocity = new Vector3(horizontalVel.x, playerRb.linearVelocity.y, horizontalVel.z);
+        }
+    }
 
 	void Jump()
 	{

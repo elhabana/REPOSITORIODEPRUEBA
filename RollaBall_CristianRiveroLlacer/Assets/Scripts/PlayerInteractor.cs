@@ -9,7 +9,7 @@ public class PlayerInteractor : MonoBehaviour
 {
     [Header("Points")]
     public int points;
-    private int[] winpoints = new int[7] { 6, 12, 15, 18, 24, 31, 32 };
+    public int[] winpoints = new int[7] { 6, 12, 15, 18, 24, 31, 32 };
     public TMP_Text pointsText;
     public TMP_Text WinTxt;
     public int WinNum = 31;
@@ -29,8 +29,9 @@ public class PlayerInteractor : MonoBehaviour
 
     [Header("Cronómetro")]
     public GameObject objTimer;
-    private TextMeshProUGUI textTimer;
-    private float timeTimer;
+    public TextMeshProUGUI textTimer;
+    public float timeTimer;
+    public static float finalTime;
 
     [Header("References")]
     public PlayerController playerCont;
@@ -38,7 +39,7 @@ public class PlayerInteractor : MonoBehaviour
     [Header("Desvanecer")]
     public float timeMission = 2f;
     public float tVisible = 1.5f;
-    private TextMeshProUGUI textMission;
+    public TextMeshProUGUI textMission;
 
     void Start()
     {
@@ -46,22 +47,6 @@ public class PlayerInteractor : MonoBehaviour
         rb[0].useGravity = false;
         rb[1].useGravity = false;
         rb[2].useGravity = false;
-
-        lavaWall[3].gameObject.SetActive(false);
-
-        lavaFloor[0].gameObject.SetActive(false);
-        lavaFloor[1].gameObject.SetActive(false);
-        lavaFloor[2].gameObject.SetActive(false);
-        lavaFloor[3].gameObject.SetActive(false);
-        lavaFloor[4].gameObject.SetActive(false);
-        lavaFloor[5].gameObject.SetActive(false);
-        lavaFloor[6].gameObject.SetActive(false);
-        lavaFloor[7].gameObject.SetActive(false);
-        lavaFloor[8].gameObject.SetActive(false);
-        lavaFloor[9].gameObject.SetActive(false);
-        lavaFloor[10].gameObject.SetActive(false);
-        lavaFloor[11].gameObject.SetActive(false);
-        lavaFloor[12].gameObject.SetActive(false);
 
         flechaHard.gameObject.SetActive(false);
 
@@ -73,6 +58,14 @@ public class PlayerInteractor : MonoBehaviour
         }
 
         textTimer = objTimer.GetComponent<TextMeshProUGUI>();
+        timeTimer = 0f;
+
+        lavaWall[3].gameObject.SetActive(false);
+
+        for (int i = 0; i < lavaFloor.Length; i++)
+        {
+            lavaFloor[i].SetActive(false);
+        }
     }
 
     void Update()
@@ -120,22 +113,18 @@ public class PlayerInteractor : MonoBehaviour
             winDoorActive = true;
         }
 
-        else if (points == winpoints[6])
+        else if (points >= winpoints[6])
         {
-            SceneManager.LoadScene(2);
-            UnityEngine.Cursor.visible = true;
+            FinishLevel();
         }
 
-        pointsText.text = "Points: " + points.ToString();
         WinTxt.text = WinNum.ToString();
        
         timeTimer += Time.deltaTime;
 
-        // Convert to minutes and seconds
         int min = Mathf.FloorToInt(timeTimer / 60);
         int sec = Mathf.FloorToInt(timeTimer % 60);
 
-        // Updates de text
         textTimer.text = string.Format("{0:00}:{1:00}", min, sec);
     }
 
@@ -179,19 +168,10 @@ public class PlayerInteractor : MonoBehaviour
 
         else if (collider.gameObject.CompareTag("Trigger4"))
         {
-            lavaFloor[0].gameObject.SetActive(true);
-            lavaFloor[1].gameObject.SetActive(true);
-            lavaFloor[2].gameObject.SetActive(true);
-            lavaFloor[3].gameObject.SetActive(true);
-            lavaFloor[4].gameObject.SetActive(true);
-            lavaFloor[5].gameObject.SetActive(true);
-            lavaFloor[6].gameObject.SetActive(true);
-            lavaFloor[7].gameObject.SetActive(true);
-            lavaFloor[8].gameObject.SetActive(true);
-            lavaFloor[9].gameObject.SetActive(true);
-            lavaFloor[10].gameObject.SetActive(true);
-            lavaFloor[11].gameObject.SetActive(true);
-            lavaFloor[12].gameObject.SetActive(true);
+            for (int i = 0; i < lavaFloor.Length; i++)
+            {
+                lavaFloor[i].SetActive(true);
+            }
         }
 
         else if (collider.gameObject.CompareTag("Trigger5"))
@@ -200,15 +180,27 @@ public class PlayerInteractor : MonoBehaviour
             LastWall[1].gameObject.SetActive(true);
         }
 
-        else if (collider.gameObject.CompareTag("PickUp"))
+        else if (collider.CompareTag("PickUp"))
         {
             points++;
             WinNum--;
+
+            if (points >= winpoints[6])
+            {
+                finalTime = timeTimer;
+                FinishLevel();
+            }
+
             collider.gameObject.SetActive(false);
             playerCont.PlaySFX(1);
-            // The option, that is commented, below this message uses more RAM
-            // Destroy(collider.gameObject);
         }
+    }
+
+    public void FinishLevel()
+    {
+        finalTime = timeTimer;
+        UnityEngine.Cursor.visible = true;
+        SceneManager.LoadScene(2);
     }
 }
 
