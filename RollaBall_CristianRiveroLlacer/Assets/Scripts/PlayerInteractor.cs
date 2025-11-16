@@ -96,7 +96,7 @@ public class PlayerInteractor : MonoBehaviour
             lavaWall[4].gameObject.SetActive(false);
             lavaWall[5].gameObject.SetActive(false);
             lavaWall[6].gameObject.SetActive(false);
-            
+
         }
 
         else if (points == winpoints[4])
@@ -105,7 +105,7 @@ public class PlayerInteractor : MonoBehaviour
             lavaWall[7].gameObject.SetActive(false);
             lavaWall[8].gameObject.SetActive(false);
         }
-        
+
         else if (!winDoorActive && points == winpoints[5])
         {
             LastWall[0].gameObject.SetActive(false);
@@ -119,13 +119,15 @@ public class PlayerInteractor : MonoBehaviour
         }
 
         WinTxt.text = WinNum.ToString();
-       
+
         timeTimer += Time.deltaTime;
 
         int min = Mathf.FloorToInt(timeTimer / 60);
         int sec = Mathf.FloorToInt(timeTimer % 60);
 
         textTimer.text = string.Format("{0:00}:{1:00}", min, sec);
+
+        pointsText.text = "Points: " + points.ToString();
     }
 
     IEnumerator MissionFade()
