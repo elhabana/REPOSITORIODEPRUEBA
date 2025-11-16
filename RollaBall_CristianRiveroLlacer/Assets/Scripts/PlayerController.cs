@@ -71,9 +71,15 @@ public class PlayerController : MonoBehaviour
 		if(lives == 0)
 		{
 			SceneManager.LoadScene(3);
-			PlayerPoints.points = 0;
+			
 			print(PlayerPoints.points);
-			LivesImage[2].SetActive(false);
+            Cursor.visible = true;
+            LivesImage[2].SetActive(false);
+
+			if (PlayerPoints.points < 32)
+			{
+                PlayerPoints.points = 0;
+            }
 		}
 	}
 

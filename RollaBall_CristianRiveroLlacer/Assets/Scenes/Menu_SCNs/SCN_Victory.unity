@@ -325,8 +325,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1282490244}
         m_TargetAssemblyTypeName: SceneManagement, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 3
+        m_MethodName: LoadGameplay
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1947,7 +1947,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2baa6d5798bab4d86a2752e46b8dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 0
   hModeCheck: 0
 --- !u!1 &2022106367
 GameObject:

@@ -118,7 +118,6 @@ public class PlayerInteractor : MonoBehaviour
         else if (points == winpoints[6])
         {
             SceneManager.LoadScene(2);
-            print(PlayerPoints.points);
             UnityEngine.Cursor.visible = true;
         }
 

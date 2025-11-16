@@ -4,11 +4,24 @@ using UnityEngine.SceneManagement;
 public class SceneManagement : MonoBehaviour
 {
     public Material material;
-    public HModeChecker hChecker;
+    public static bool hardMode;
 
     public void LoadScene(int sceneToLoad)
     {
         SceneManager.LoadScene(sceneToLoad);
+    }
+
+    public void LoadGameplay()
+    {
+        if (hardMode == true)
+        {
+            SceneManager.LoadScene(7);
+        }
+
+        else if (hardMode == false)
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 
     public void ExitGame() 
@@ -16,17 +29,17 @@ public class SceneManagement : MonoBehaviour
         Debug.Log("You closed the game.");
         Application.Quit();
     }
-
-    public void LoadGameMode()
+    
+    public void SetHardModeOn()
     {
-        if (hChecker.hModeChecker)
-        {
-            SceneManager.LoadScene(7);
-        }
-        else
-        {
-            SceneManager.LoadScene(1);
-        }
+        hardMode = true;
+        SceneManager.LoadScene(7);
+    }
+
+    public void SetHardModeOff()
+    {
+        hardMode = false;
+        SceneManager.LoadScene(1);
     }
 }
 

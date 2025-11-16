@@ -926,8 +926,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1282490244}
         m_TargetAssemblyTypeName: SceneManagement, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 3
+        m_MethodName: SetHardModeOff
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3932,8 +3932,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1282490244}
         m_TargetAssemblyTypeName: SceneManagement, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 3
+        m_MethodName: SetHardModeOn
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3992,7 +3992,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3873593fc01d6764fa8d184752aa85fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hModeEnable: 0
   hModeButton: {fileID: 1329114480}
   btn: {fileID: 1329114482}
   playerPoints: {fileID: 829682565}

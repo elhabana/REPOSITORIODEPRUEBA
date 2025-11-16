@@ -10,16 +10,12 @@ public class PlayerPoints : MonoBehaviour
     {
         if (points < 32)
         {
-            points = 31;
+            points = 0;
             hModeCheck = false;
         }
         else if (points == 32)
         {
             Debug.Log("Hardmode Enabled");
-        }
-        else
-        {
-            Debug.Log("Error");
         }
     }
 

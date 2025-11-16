@@ -6,6 +6,7 @@ public class HardcoreMode : MonoBehaviour
 {
     [Header("Hardcore Activates")]
     public static bool hModeEnable;
+    public static bool hModeSelector;
     public GameObject hModeButton;
     public Button btn;
 
@@ -20,6 +21,15 @@ public class HardcoreMode : MonoBehaviour
         hModeEnable = false;
         btn = hModeButton.GetComponent<Button>();
         btn.interactable = false;
+
+        if (SceneManager.GetActiveScene().name == "SCN_Gameplay")
+        {
+            hModeSelector = false;
+        }
+        else
+        {
+            hModeSelector = true;
+        }
     }
 
 
