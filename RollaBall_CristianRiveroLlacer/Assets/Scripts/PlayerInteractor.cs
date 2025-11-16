@@ -20,7 +20,7 @@ public class PlayerInteractor : MonoBehaviour
     [Header("Game Objects")]
     public GameObject mission;
     public GameObject[] lavaWall = new GameObject[7];
-    public GameObject[] lavaFloor = new GameObject[8];
+    public GameObject[] lavaFloor = new GameObject[13];
     public GameObject[] LastWall = new GameObject[2];
     public GameObject flechaHard;
     public bool lavaActive;
@@ -57,6 +57,11 @@ public class PlayerInteractor : MonoBehaviour
         lavaFloor[5].gameObject.SetActive(false);
         lavaFloor[6].gameObject.SetActive(false);
         lavaFloor[7].gameObject.SetActive(false);
+        lavaFloor[8].gameObject.SetActive(false);
+        lavaFloor[9].gameObject.SetActive(false);
+        lavaFloor[10].gameObject.SetActive(false);
+        lavaFloor[11].gameObject.SetActive(false);
+        lavaFloor[12].gameObject.SetActive(false);
 
         flechaHard.gameObject.SetActive(false);
 
@@ -182,6 +187,11 @@ public class PlayerInteractor : MonoBehaviour
             lavaFloor[5].gameObject.SetActive(true);
             lavaFloor[6].gameObject.SetActive(true);
             lavaFloor[7].gameObject.SetActive(true);
+            lavaFloor[8].gameObject.SetActive(true);
+            lavaFloor[9].gameObject.SetActive(true);
+            lavaFloor[10].gameObject.SetActive(true);
+            lavaFloor[11].gameObject.SetActive(true);
+            lavaFloor[12].gameObject.SetActive(true);
         }
 
         else if (collider.gameObject.CompareTag("Trigger5"))
